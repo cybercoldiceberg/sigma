@@ -33,9 +33,6 @@ detection:
             - 'systemctl disable containerd'
             - 'systemctl stop docker.service'
     condition: (selection_process and not filter_legitimate_paths) or selection_file_creation or selection_network_tor or selection_remediation_activity
-fields:
-    - Image
-    - CommandLine
 falsepositives:
     - Highly customized administrative maintenance scripts altering local cluster runtimes.
 level: critical
